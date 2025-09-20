@@ -18,18 +18,48 @@ int main() {
 	    cout << "Failed to open file" << endl;
 	    return 1;
 	}
-    file.close();
-
+    
 	//Array Initialization
 	array<int, SIZE> studentIDs;
+	array<int, SIZE> ages;
 	string sID;
 	int count = 0;
+
     while (getline(file, sID)) {
-		studentIDs[count] = stoi(sID);
-		cout << sID << endl;
-		cout << studentIDs[count] << endl;
+		studentIDs[count] = stoi(sID.substr(0, 7));
+		ages[count] = stoi(sID.substr(8, 2));
 		count++;
     }
+	file.close();
+
+	//Display
+	cout << "Student IDS:" << endl;
+	for (int i = 0; i < SIZE; i++) {
+		cout << studentIDs[i] << " ";
+	}
+	cout << endl;
+
+	//Outputting different elements
+	cout << "First Student ID Inputted: " << studentIDs.front() << endl;
+	cout << "Last Student ID Inputted: " << studentIDs.back() << endl;
+	cout << "5th Student ID Inputted: " << studentIDs.at(5) << endl;
+
+	//2D array
+	array <array<int, SIZE>, 2> table = {studentIDs, ages};
+	for (int i = 0; i < SIZE; i++) {
+		cout <<
+	}
+
+
+
+	//Sorted
+	sort(studentIDs.begin(), studentIDs.end());
+	cout << "Students sorted by ID: " << endl;
+	for (int i = 0; i < SIZE; i++) {
+		cout << studentIDs[i] << " ";
+	}
+	cout << endl;
+
 
 }
 
