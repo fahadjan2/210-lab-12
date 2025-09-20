@@ -44,22 +44,28 @@ int main() {
 	cout << "Last Student ID Inputted: " << studentIDs.back() << endl;
 	cout << "5th Student ID Inputted: " << studentIDs.at(5) << endl;
 
-	//2D array
-	array <array<int, SIZE>, 2> table = {studentIDs, ages};
+	//Age w/ Student ID
+	cout << "\n\nStudent IDs paired with age: " << endl;
 	for (int i = 0; i < SIZE; i++) {
-		cout <<
+		cout << "Student ID: " << studentIDs[i] << " -- Age: " << ages[i] << endl;
 	}
-
-
 
 	//Sorted
 	sort(studentIDs.begin(), studentIDs.end());
-	cout << "Students sorted by ID: " << endl;
+	cout << "\nStudents sorted by ID: " << endl;
 	for (int i = 0; i < SIZE; i++) {
 		cout << studentIDs[i] << " ";
 	}
 	cout << endl;
 
-
+	//Find value
+	int IDToFind = 2225255;
+	array <int, SIZE>::iterator finder;
+	finder = find(studentIDs.begin(), studentIDs.end(), IDToFind);
+	if (finder != studentIDs.end()) {
+		cout << IDToFind << " was found" << endl;
+	} else {
+		cout << IDToFind << " wasn't found" << endl;
+	}
 }
 
