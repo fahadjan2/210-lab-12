@@ -1,4 +1,4 @@
-// COMSC-210 | Lab 11 | Fahad Fawad Ahmad
+// COMSC-210 | Lab 12 | Fahad Fawad Ahmad
 // IDE used: Visual Studio
 //Program uses an array to read off a file containing student IDs. It will read off the file and display a bunch of information based on it
 #include <iostream>
@@ -10,7 +10,6 @@ using namespace std;
 const int SIZE = 30;
 
 int main() {
-	cout << "test" << endl;
     //File Opening
 	ifstream file;
 	file.open("elements.txt");
